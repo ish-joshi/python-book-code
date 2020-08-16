@@ -2,7 +2,7 @@
 # Sometimes you have to accept coordinates as params
 
 ######################################### Helper
-def distance_from_origin(x0:float, y0:float) -> float:
+def distance_from_origin(x0, y0):
     return sqrt(x0**2 + y0**2)
 
 

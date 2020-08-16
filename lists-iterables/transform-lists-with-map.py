@@ -38,3 +38,5 @@ def two_raised_to_n(n):
 
 powers_of_two = list ( map(two_raised_to_n, nums_zero_to_10))
 
+
+# Note you can also use a lambda function here. 

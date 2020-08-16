@@ -4,7 +4,7 @@ from typing import List
 
 # Create pairs and return list
 # [1, 2, 6, 7, 9] --> [(1, 2), (2, 6), (6, 7), (7, 9)]
-def bad_make_pairs(nums: List[int]) -> List[tuple]:
+def bad_make_pairs(nums):
     out = []
     for i in range(len(nums) - 1):
         to_add = (nums[i], nums[i+1])
@@ -12,7 +12,7 @@ def bad_make_pairs(nums: List[int]) -> List[tuple]:
     return out
 
 
-def good_make_pairs(nums: List[int]) -> List[tuple]:
+def good_make_pairs(nums):
     assert len(nums) > 1
     return list ( zip(nums, nums[1:]))
 
@@ -24,7 +24,7 @@ def good_make_pairs(nums: List[int]) -> List[tuple]:
 
 diff = -10000000 # really small num
 
-def find_largest_adjacent_difference(nums: List[int]) -> int:
+def find_largest_adjacent_difference(nums):
     """This functions checks the difference of all the adjacent elements and returns the largest difference
 
     [1, 2, 6, 7, 9]

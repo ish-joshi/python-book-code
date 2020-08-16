@@ -2,7 +2,7 @@
 from collections import Counter, defaultdict
 
 
-def count_chars(word: str):
+def count_chars(word):
     counting = {}
     for letter in word:
         if counting.get(letter) is None:
@@ -12,7 +12,7 @@ def count_chars(word: str):
 
 
 # We can simplify this a bit 
-def counting_with_default_dict(word: str):
+def counting_with_default_dict(word):
     counting = defaultdict(int)
     for letter in word:
         # this will never be none because defaultdict
@@ -21,7 +21,7 @@ def counting_with_default_dict(word: str):
 
 
 # Let's do a two liner
-def counting_magic(word: str):
+def counting_magic(word):
     counting = Counter(word)
     print(counting)
 
