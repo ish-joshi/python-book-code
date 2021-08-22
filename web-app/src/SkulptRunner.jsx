@@ -31,7 +31,7 @@ class SkulptRunner extends Component {
   
 
     onRun() {
-        Sk.configure({output: (out) => {
+        Sk.configure({__future__: Sk.python3, output: (out) => {
             this.setState(prev => ({
                 holding: prev.holding.concat([out])
             }))

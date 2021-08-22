@@ -1,32 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown'
 import SkulptRunner from './SkulptRunner';
+import {LEARNING_CONTENT} from './content'
+import './appstyles.css'
 
 function Code(props) {
 
-  return <SkulptRunner code={props.value}/>
+  return <div style={{padding: '2%', border: 'solid 1px black'}}><SkulptRunner code={props.value}/></div>
 }
 
 function App() {
-  const readme = `# Hello
-  This is some sort of descriptions!
-  **bolded??**
+  const [readmeToDisplay, setReadmeToDisplay] = useState("")
 
-  \`\`\`python3
-  def hello():
-    print("Hello")
-  \`\`\`
-  ## HEading 2
-  \`\`\`\python3
-  def wiegehts():
-    print("wiegehts")
-  wiegehts()
-  \`\`\`
-  `
+  const keys = Object.keys(LEARNING_CONTENT)
+
+  keys.forEach(console.log)
 
   return (
     <div className="App">
-     <ReactMarkdown renderers={{code: Code}} source={readme} />
+
+      <ul>
+        {
+          keys.map(key => <li><a style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={() => setReadmeToDisplay(key)}>{key}</a></li>)
+        }
+      </ul>
+
+      <div style={{padding: '2%'}}>
+      <ReactMarkdown renderers={{code: Code}} source={LEARNING_CONTENT[readmeToDisplay]} />
+      </div>
+     
     </div>
   );
 }
